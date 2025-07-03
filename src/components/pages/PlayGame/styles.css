@@ -1,0 +1,45 @@
+.play {
+  text-align: start;
+  padding: 30px;
+  width: 500px;
+  height: 80vh;
+  margin: 30px auto;
+  border: 1px solid #ccc;
+}
+
+.play > .play_point {
+  width: 100%;
+  height: 80%;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+.play_title {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.play_action {
+  margin-top: 10px;
+}
+
+.play_btn {
+  margin-right: 10px;
+  width: 100px;
+}
+.play_input_label {
+  margin-right: 100px;
+}
+
+.play_title--black {
+  color: black;
+}
+.play_title--red {
+  color: red;
+}
+.play_title--green {
+  color: green;
+}
