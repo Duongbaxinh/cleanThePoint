@@ -158,7 +158,7 @@ function PlayGame() {
                 </div>
             </form>
 
-            <div className="play_point">
+            <div className="play_point" >
                 {points.map((point) => (
                     <Point
                         key={point}
@@ -167,6 +167,7 @@ function PlayGame() {
                         isHidden={clickedPoints.includes(point)}
                         disabled={stop || win}
                         isReset={isReset}
+                        autoPlay={autoPlay}
                     />
                 ))}
             </div>
