@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState, useMemo } from 'react';
 import './styles.css';
 
-function Point({ point, onClick, isHidden, disabled, isReset }) {
+function Point({ point, onClick, isHidden, disabled, isReset, autoPlay }) {
     const [timeLeft, setTimeLeft] = useState(3000);
 
     useEffect(() => {
@@ -27,8 +27,10 @@ function Point({ point, onClick, isHidden, disabled, isReset }) {
 
     // Random position point
     const position = useMemo(() => ({
-        left: Math.random() * (500 - 30),
-        top: Math.random() * (400 - 30),
+        left: Math.random() * (470 - 30),
+        top: Math.random() * (370 - 30),
+        right: Math.random() * (490 - 30),
+        bottom: Math.random() * (380 - 30),
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }), [isReset]);
 
@@ -46,10 +48,13 @@ function Point({ point, onClick, isHidden, disabled, isReset }) {
             className="point"
             onClick={handleClick}
             style={{
+                pointerEvents: autoPlay ? "none" : "auto",
                 backgroundColor: backgroundColor,
                 position: 'absolute',
                 left: position.left,
                 top: position.top,
+                right: position.right,
+                bottom: position.bottom,
                 opacity: opacity,
                 zIndex: zIndex
             }}
@@ -66,6 +71,7 @@ Point.propTypes = {
     point: PropTypes.number.isRequired,
     onClick: PropTypes.func.isRequired,
     isHidden: PropTypes.bool.isRequired,
+    autoPlay: PropTypes.bool.isRequired,
     isReset: PropTypes.bool.isRequired,
     disabled: PropTypes.bool.isRequired,
 };

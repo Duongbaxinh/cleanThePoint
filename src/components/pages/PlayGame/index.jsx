@@ -57,8 +57,9 @@ function PlayGame() {
 
     const resetGame = ({ clearPoints = false, clearInput = false } = {}) => {
         setTimeCount(0);
-        setWin(false);
         setIsReset(prev => !prev);
+        setWin(false);
+        setStop(false);
         setAutoPlay(false);
 
         if (clearPoints) {
@@ -102,6 +103,7 @@ function PlayGame() {
                 intervalIdRef.current = null;
             }
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [points.length, stop, win, clickedPoints.length]);
 
     // Auto-play 
@@ -156,7 +158,7 @@ function PlayGame() {
                 </div>
             </form>
 
-            <div className="play_point">
+            <div className="play_point" >
                 {points.map((point) => (
                     <Point
                         key={point}
@@ -165,6 +167,7 @@ function PlayGame() {
                         isHidden={clickedPoints.includes(point)}
                         disabled={stop || win}
                         isReset={isReset}
+                        autoPlay={autoPlay}
                     />
                 ))}
             </div>
