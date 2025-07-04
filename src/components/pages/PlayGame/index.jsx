@@ -42,7 +42,7 @@ function PlayGame() {
             setAutoPlay(false);
             setTimeout(() => {
                 setWin(true);
-            }, 3100);
+            }, 3000);
             return;
         }
 
