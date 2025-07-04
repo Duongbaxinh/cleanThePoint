@@ -27,8 +27,10 @@ function Point({ point, onClick, isHidden, disabled, isReset }) {
 
     // Random position point
     const position = useMemo(() => ({
-        left: Math.random() * (500 - 30),
-        top: Math.random() * (400 - 30),
+        left: Math.random() * (470 - 30),
+        top: Math.random() * (370 - 30),
+        right: Math.random() * (490 - 30),
+        bottom: Math.random() * (380 - 30),
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }), [isReset]);
 
@@ -50,6 +52,8 @@ function Point({ point, onClick, isHidden, disabled, isReset }) {
                 position: 'absolute',
                 left: position.left,
                 top: position.top,
+                right: position.right,
+                bottom: position.bottom,
                 opacity: opacity,
                 zIndex: zIndex
             }}
